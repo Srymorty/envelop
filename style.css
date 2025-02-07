@@ -183,7 +183,7 @@ button:focus {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 25%; /* Keep the width smaller for the sides */
+    max-width: 30%; /* Keep the width smaller for the sides */
     justify-content: center;
     align-items: center; /* Center the images vertically within the column */
 }
