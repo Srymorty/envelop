@@ -129,7 +129,7 @@ body {
 }
 
 .popup-content h6 {
-    font-size: 28px;
+    font-size: 15px;
     color: #ff4757;
     margin-bottom: 20px;
     opacity: 0;
@@ -148,6 +148,7 @@ body {
         transform: scale(1);
     }
 }
+
 
 button {
     padding: 12px 25px;
@@ -168,7 +169,6 @@ button:hover {
 button:focus {
     outline: none;
 }
-
 /* Container for images */
 .images {
     display: flex;
@@ -210,67 +210,6 @@ button:focus {
     height: auto;
 }
 
-/* Media Queries for Tablets and Mobile */
-@media (max-width: 768px) {
-    .images {
-        flex-direction: column;
-        padding: 10px;
-    }
 
-    .left-side, .right-side {
-        max-width: 80%; /* Increase width for smaller devices */
-        margin: 10px 0;
-    }
 
-    .center-image {
-        max-width: 80%;
-    }
 
-    .container {
-        padding: 20px;
-    }
-
-    .popup-content {
-        width: 90%;  /* Slightly smaller popup for smaller screens */
-    }
-
-    .envelope {
-        width: 250px;
-        height: 140px;
-    }
-
-    .heart {
-        font-size: 40px;
-    }
-}
-
-@media (max-width: 480px) {
-    .images {
-        padding: 5px;
-    }
-
-    .left-side, .right-side {
-        max-width: 100%; /* Full width for small screens */
-    }
-
-    .center-image {
-        max-width: 100%;
-    }
-
-    .container {
-        padding: 10px;
-    }
-
-    .envelope {
-        width: 200px;
-        height: 120px;
-    }
-
-    .heart {
-        font-size: 35px;
-    }
-
-    .popup-content {
-        width: 95%; /* Full width for very small screens */
-    }
-}
