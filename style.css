@@ -149,7 +149,6 @@ body {
     }
 }
 
-
 button {
     padding: 12px 25px;
     background-color: #ff4757;
@@ -169,6 +168,7 @@ button:hover {
 button:focus {
     outline: none;
 }
+
 /* Container for images */
 .images {
     display: flex;
@@ -197,7 +197,7 @@ button:focus {
 
 /* Image styling */
 .left-side img, .right-side img, .center-image img {
-    max-width: 80%;  /* Make sure images fit inside their container */
+    max-width: 90%;  /* Make sure images fit inside their container */
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Optional: shadow for effect */
@@ -210,6 +210,67 @@ button:focus {
     height: auto;
 }
 
+/* Media Queries for Tablets and Mobile */
+@media (max-width: 768px) {
+    .images {
+        flex-direction: column;
+        padding: 10px;
+    }
 
+    .left-side, .right-side {
+        max-width: 80%; /* Increase width for smaller devices */
+        margin: 10px 0;
+    }
 
+    .center-image {
+        max-width: 80%;
+    }
 
+    .container {
+        padding: 20px;
+    }
+
+    .popup-content {
+        width: 90%;  /* Slightly smaller popup for smaller screens */
+    }
+
+    .envelope {
+        width: 250px;
+        height: 140px;
+    }
+
+    .heart {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .images {
+        padding: 5px;
+    }
+
+    .left-side, .right-side {
+        max-width: 100%; /* Full width for small screens */
+    }
+
+    .center-image {
+        max-width: 100%;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .envelope {
+        width: 200px;
+        height: 120px;
+    }
+
+    .heart {
+        font-size: 35px;
+    }
+
+    .popup-content {
+        width: 95%; /* Full width for very small screens */
+    }
+}
