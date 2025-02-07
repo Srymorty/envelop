@@ -199,7 +199,7 @@ button:focus {
 .left-side img, .right-side img, .center-image img {
     max-width: 100%;  /* Make sure images fit inside their container */
     height: auto;
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Optional: shadow for effect */
     object-fit: cover;  /* Ensure images maintain good aspect ratio */
 }
