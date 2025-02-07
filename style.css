@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Floating hearts animation */
+@keyframes floatHearts {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    50% { transform: translateY(-100px) scale(1.2); opacity: 0.8; }
+    100% { transform: translateY(-200px) scale(0.8); opacity: 0; }
+}
+
+.heart-bg {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 20px;
+    animation: floatHearts 4s infinite ease-in-out;
+    user-select: none;
+}
+
+/* Random heart positions */
+.heart-bg:nth-child(1) { left: 5%; top: 10%; animation-delay: 0s; }
+.heart-bg:nth-child(2) { left: 20%; top: 30%; animation-delay: 1s; }
+.heart-bg:nth-child(3) { left: 40%; top: 50%; animation-delay: 2s; }
+.heart-bg:nth-child(4) { left: 60%; top: 20%; animation-delay: 3s; }
+.heart-bg:nth-child(5) { left: 80%; top: 40%; animation-delay: 4s; }
+.heart-bg:nth-child(6) { left: 90%; top: 60%; animation-delay: 5s; }
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Envelope */
+.envelope {
+    width: 280px;
+    height: 160px;
+    position: relative;
+    cursor: pointer;
+    perspective: 1000px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.envelope:hover {
+    transform: scale(1.05);
+}
+
+.flap {
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(135deg, #ff6b81, #ff4757);
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    transform-origin: top;
+    transform: rotateX(0deg);
+    transition: transform 0.5s ease-in-out;
+}
+
+.body {
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(135deg, #ff6b81, #ff4757);
+    position: absolute;
+    bottom: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.heart {
+    font-size: 45px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    padding: 20px;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.popup-content {
+    background: #fff5f5;
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: popUp 0.5s ease-in-out;
+}
+
+@keyframes popUp {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.popup-content h6 {
+    font-size: 28px;
+    color: #ff4757;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeInScale 0.6s ease-in-out forwards;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+button {
+    padding: 12px 25px;
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #e84118;
+}
+
+button:focus {
+    outline: none;
+}
+/* Container for images */
+.images {
+    display: flex;
+    justify-content: space-between;  /* Evenly space items horizontally */
+    align-items: center;
+    padding: 20px;
+    width: 100%; /* Ensure full width for the container */
+}
+
+/* Styling for left and right sides */
+.left-side, .right-side {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 25%; /* Keep the width smaller for the sides */
+    justify-content: center;
+    align-items: center; /* Center the images vertically within the column */
+}
+
+.center-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 40%; /* Adjust this if needed */
+}
+
+/* Image styling */
+.left-side img, .right-side img, .center-image img {
+    max-width: 100%;  /* Make sure images fit inside their container */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Optional: shadow for effect */
+    object-fit: cover;  /* Ensure images maintain good aspect ratio */
+}
+
+/* Optional: Adjust center image size */
+.center-image img {
+    max-width: 120%; /* Adjust to make center image slightly bigger */
+    height: auto;
+}
+
+
+
+
